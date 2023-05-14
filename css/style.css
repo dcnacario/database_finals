@@ -1,0 +1,116 @@
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: #F8F8F8;
+    margin: 0;
+    overflow: hidden;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+}
+
+ul.topnav li a {
+    display: block;
+    padding: 16px 18px;
+    color: #25AAE2;
+    text-decoration: none;
+    font-weight: 450;
+    border-bottom: rgba(19,169,206,0%) solid medium;
+}
+
+ul.topnav li a:hover:not(.active) {
+    color: rgba(19,169,206,50%);
+    border-bottom: #25AAE2 solid medium;
+}
+
+ul.topnav li a.active {
+    background-color: #25AAE2;
+    color: #F8F8F8;
+}
+
+ul.topnav li.right {
+    float: right;
+    margin: auto;
+}
+
+ul.topnav li.logo {
+    height: 15vh;
+    padding-left: 30px;
+}
+
+ul.topnav li.right_search {
+    float: right;
+    margin-top: 0.7%;
+    padding-right: 50px;
+}
+
+div.right_group {
+    margin-top: -6%;
+}
+
+input.search_bar {
+    border-radius: 1rem;
+    padding: 6px 8px;
+    outline: none;
+    border: #25AAE2 2px solid;
+    background-color: #F8F8F8;
+    color: #25AAE2;
+    font-weight: 450;
+    width: 80%;
+}
+input.search_bar::-webkit-input-placeholder {
+    background-color: #F8F8F8;
+    color: rgba(19,169,206,60%);
+    font-weight: 450;
+}
+
+
+div.sub-content {
+    background-image: url("../resources/passenger_plane.svg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    transform: rotate(15deg);
+    background-position: 85%;
+}
+
+
+div.content {
+    background-image: url("../resources/clouds.png");
+    height: 100%;
+    background-size: 70%;
+    background-position: 100% 70%;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+span.content-text {
+    color: #5F5F5F;
+    font-size: 50px;
+    position: absolute;
+    top: 230px;
+    left: 640px;
+}
+span.content-colored {
+    color: #25AAE2;
+    font-size: 50px;
+    font-weight: 450;
+}
+
+@media screen and (max-width:600px){
+    ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
+}
+
+  
