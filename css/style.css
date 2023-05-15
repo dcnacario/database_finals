@@ -132,7 +132,17 @@ div.content-container{
     left: 10%;
     z-index: 1;
     height: auto;
+    animation: content-container-animation 0.8s linear 0s 1 normal;
 }
+
+@keyframes content-container-animation {
+    0% {opacity: 0%; top: 250px;}
+    25% {opacity: 25%;}
+    50% {opacity: 50%;}
+    75% {opacity: 75%;}
+    100% {opacity: 100%;}
+}
+
 div.content-item{
     border-radius: 1rem;
     padding: 8px 10px;
