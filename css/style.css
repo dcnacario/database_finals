@@ -90,7 +90,6 @@ div.content {
     background-size: 70%;
     background-position: 100% 70%;
     background-repeat: no-repeat;
-    z-index: 0;
 }
 
 span.content-text {
@@ -106,10 +105,114 @@ span.content-colored {
     font-weight: 450;
 }
 
+/* CSS Buttons */
+button.btn_book {
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: #25AAE2;
+    color: #F8F8F8;
+}
+button.btn_book:hover {
+    cursor: pointer;
+    border: #25AAE2 1px solid;
+    color: #25AAE2;
+    background-color: rgba(19,169,206,0%);
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.25);
+}
+
+/* search flight */
+div.content-container{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    z-index: 1;
+    height: auto;
+}
+div.content-item{
+    border-radius: 1rem;
+    padding: 8px 10px;
+    background-color: #F8F8F8;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.25);
+    height: 80px;
+}
+
+div.content-origin {
+    float: left;
+    margin-top: 8%;
+}
+div.content-destination {
+    float: left;
+    margin-top: 8%;
+}
+
+div.content-button {
+    float: left;
+    margin-top: 8%;
+}
+
+input.content-textbox-origin {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border: #25AAE2 1px solid;
+    outline: none;
+    padding: 8px;
+}
+input.content-textbox-destination {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    margin-left: -2px;
+    outline: none;
+    border: #25AAE2 1px solid;
+    padding: 8px;
+}
+
+button.btn-flight {
+    border-radius: 0.3rem;
+    padding: 8px;
+    margin-left: 1px;
+    outline: none;
+    border: none;
+    background-color: #25AAE2;
+    color: #F8F8F8;
+}
+
+button.btn-flight:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(13,109,149,80%);
+}
+
+span.p-flight {
+    font-size: 18px;
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-weight: 450;
+    color: #5F5F5F;
+}
+
+span.sp-flight-to {
+    position: absolute;
+    top: 28px;
+    font-size: 12px;
+    color: #5F5F5F;
+}
+
+i.material-icons {
+    font-size: 20px;
+    color: #25AAE2;
+}
+
+
 @media screen and (max-width:600px){
     ul.topnav li.right,
     ul.topnav li {
-        float: none;
+        float: left;
     }
 }
 
