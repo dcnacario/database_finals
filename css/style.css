@@ -85,7 +85,7 @@ div.sub-content {
 
 
 div.content {
-    background-image: url("../resources/clouds.png");
+    background-image: url("../resources/clouds.svg");
     height: 100%;
     background-size: 70%;
     background-position: 100% 70%;
@@ -132,7 +132,7 @@ div.content-container{
     left: 10%;
     z-index: 1;
     height: auto;
-    animation: content-container-animation 0.8s linear 0s 1 normal;
+    animation: content-container-animation 0.8s ease-in-out 0s 1 normal;
 }
 
 @keyframes content-container-animation {
@@ -216,6 +216,29 @@ span.sp-flight-to {
 i.material-icons {
     font-size: 20px;
     color: #25AAE2;
+}
+
+/* showFlights CSS */
+
+img.img-bg {
+    width: 100%;
+    position: absolute;
+    left: -500px;
+    top: 250px;
+    transform: rotate(40deg);
+}
+
+span.showflight-text {
+    font-size: 25px;
+    position: absolute;
+    top: 750px;
+    left: 1000px;
+}
+
+span.showflight-colored {
+    color: #25AAE2;
+    font-size: 25px;
+    font-weight: 450;
 }
 
 

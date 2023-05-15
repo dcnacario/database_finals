@@ -1,6 +1,6 @@
 <html>
     <head>
-    <title>Aerilon | Search Flights</title>
+        <title>Aerilon | Search Flights</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image-x-icon" href="./resources/favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -22,7 +22,7 @@
                 <!-- Book now -->
         <div class="content-container">
             <div class="content-item" id="content-item">
-                <form>
+                <form action="showFlights.php" method="post">
                     <div class="content-origin">
                     <span class="p-flight"><i class="material-icons">flight</i>Flight</span>
                     <span class="sp-flight-to">To</span>
