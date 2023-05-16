@@ -18,7 +18,7 @@
                 <li class="right"><a href="#">Meet the Crew</a></li>
             </div>
         </ul>
-       
+        <div class="lds-dual-ring"></div>
                 <!-- Book now -->
         <div class="content-container">
             <div class="content-item" id="content-item">
@@ -43,5 +43,5 @@
         <div class="sub-content2">      
         </div>
         </div>
-    </body>
+    </div>
 </html>
