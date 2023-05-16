@@ -20,8 +20,19 @@
         </ul>
         <div>
         <span class="showflight-text">The world is yours to <span class="showflight-colored">EXPLORE</span></span>
-        
-
+        <form>    
+                <table>
+                    <tr>
+                        <th>Trip</th>
+                        <th>Date</th>
+                        <th>Aircraft Number</th>
+                        <th>Destination</th>
+                        <th>Distance</th>
+                        <th>Hours Flown</th>
+                        <th>Hours Wait</th>
+                    </tr>
+                </table>
+        </form>
         <img src="./resources/clouds.svg" class="img-bg">
         </div>
     </body>
