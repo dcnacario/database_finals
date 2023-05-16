@@ -39,8 +39,8 @@
             </div> 
         </div>
         <span class="content-text">The world is yours to <span class="content-colored">EXPLORE</span></span>
-        <div class="content">
-        <div class="sub-content">      
+        <div class="content2">
+        <div class="sub-content2">      
         </div>
         </div>
     </body>

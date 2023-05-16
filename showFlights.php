@@ -18,21 +18,20 @@
                 <li class="right"><a href="#">Meet the Crew</a></li>
             </div>
         </ul>
-        <div>
+        <div class="showflight-container">
         <span class="showflight-text">The world is yours to <span class="showflight-colored">EXPLORE</span></span>
-        <form>    
-                <table>
-                    <tr>
-                        <th>Trip</th>
-                        <th>Date</th>
-                        <th>Aircraft Number</th>
-                        <th>Destination</th>
-                        <th>Distance</th>
-                        <th>Hours Flown</th>
-                        <th>Hours Wait</th>
-                    </tr>
-                </table>
-        </form>
+        <table class="tb-container">
+            <tr>
+                <th>Trip</th>
+                <th>Date</th>
+                <th>Aircraft Number</th>
+                <th>Destination</th>
+                <th>Distance</th>
+                <th>Hours Flown</th>
+                <th>Hours Wait</th>
+                <th></th>
+            </tr>
+        </table>
         <img src="./resources/clouds.svg" class="img-bg">
         </div>
     </body>

@@ -90,6 +90,33 @@ div.content {
     background-size: 70%;
     background-position: 100% 70%;
     background-repeat: no-repeat;
+    animation: sub-content-animation-plane 0.9s ease-in-out 0s 1 normal;
+}
+div.sub-content2 {
+    background-image: url("../resources/passenger_plane.svg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    transform: rotate(15deg);
+    background-position: 85%;
+    animation: sub-content-animation-plane 0.8s ease-in-out 0s 1 normal;
+}
+
+@keyframes sub-content-animation-plane {
+    0% {opacity: 0%;}
+    25% {opacity: 25%;}
+    50% {opacity: 50%;}
+    75% {opacity: 75%;}
+    100% {opacity: 100%;}
+}
+
+
+div.content2 {
+    background-image: url("../resources/clouds.svg");
+    height: 100%;
+    background-size: 70%;
+    background-position: 100% 70%;
+    background-repeat: no-repeat;
 }
 
 span.content-text {
@@ -98,7 +125,18 @@ span.content-text {
     position: absolute;
     top: 230px;
     left: 640px;
+    animation: sub-content-animation-text 0.8s ease-in-out 0s 1 normal;
 }
+
+@keyframes sub-content-animation-text {
+    0% {opacity: 0%; top: 200px;}
+    25% {opacity: 25%; }
+    50% {opacity: 50%;}
+    75% {opacity: 75%;}
+    100% {opacity: 100%;}
+}
+
+
 span.content-colored {
     color: #25AAE2;
     font-size: 50px;
@@ -116,6 +154,15 @@ button.btn_book {
     border: none;
     background-color: #25AAE2;
     color: #F8F8F8;
+    animation: sub-content-animation-book 0.8s ease-in-out 0.1s 1 normal;
+}
+
+@keyframes sub-content-animation-book {
+    0% {opacity: 0%; top: 500px;}
+    25% {opacity: 25%;}
+    50% {opacity: 50%;}
+    75% {opacity: 75%;}
+    100% {opacity: 100%;}
 }
 button.btn_book:hover {
     cursor: pointer;
@@ -132,11 +179,11 @@ div.content-container{
     left: 10%;
     z-index: 1;
     height: auto;
-    animation: content-container-animation 0.8s ease-in-out 0s 1 normal;
+    animation: content-container-animation 0.8s ease-in-out 0.1s 1 normal;
 }
 
 @keyframes content-container-animation {
-    0% {opacity: 0%; top: 250px;}
+    0% {opacity: 0%; top: 450px;}
     25% {opacity: 25%;}
     50% {opacity: 50%;}
     75% {opacity: 75%;}
@@ -231,13 +278,31 @@ img.img-bg {
 span.showflight-text {
     font-size: 25px;
     position: absolute;
-    top: 750px;
-    left: 1000px;
+    bottom: -43rem;
+    right: 5rem;
+}
+div.showflight-container {
+    position: relative;
 }
 
 span.showflight-colored {
     color: #25AAE2;
     font-size: 25px;
+    font-weight: 450;
+}
+
+/* FOR TABLE CSS */
+table.tb-container {
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 1rem;
+}
+
+.tb-container th {
+    padding: 2rem;
     font-weight: 450;
 }
 
