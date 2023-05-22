@@ -23,7 +23,7 @@
         </ul>
         <div class="login_container">
             <h2 style="text-align: center;">Admin</h2>
-            <form method="post" action="authentication.php">
+            <form method="post" action="./backend/authentication.php">
                 <div class="inner_login_container">
                     <div class="username_container">
                         <label>Username</label>
