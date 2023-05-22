@@ -14,6 +14,7 @@
             <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
         </ul>
         <div class="button_nav">
+                <h3>Welcome! Admin</h3>
                 <form>
                     <button type="submit" class="btn_add_admin">Add</button>
                 </form>
@@ -32,6 +33,7 @@
                     <th>Distance</th>
                     <th>Hours Flown</th>
                     <th>Hours Wait</th>
+                    <th>Action</th>
                 </tr>
             </table>
         </div>

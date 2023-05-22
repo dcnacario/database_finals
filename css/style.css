@@ -475,6 +475,12 @@ button.btn_add_admin:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: rgba(13,109,149,80%);
 }
+h3 {
+    margin-top: 0.5%;
+    padding-right: 5%;
+    color: #25AAE2;
+    text-align: center;
+}
 
 
 @media screen and (max-width:600px){
