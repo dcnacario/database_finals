@@ -407,6 +407,75 @@ h2,label {
     color: #25AAE2;
 }
 
+/* Admin Page */
+
+ul.topnav_admin {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 1%;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+}
+
+div.admin_container {
+    margin-top: 1%;
+}
+
+div.button_nav {
+    margin-top: -3%;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+table.tb-container_admin {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 1rem;
+    margin-top: 1%;
+}
+
+.tb-container_admin th {
+    padding: 2rem;
+    font-weight: 450;
+}
+
+button.btn_del_admin {
+    border-radius: 0.6rem;
+    padding: 6px;
+    outline: none;
+    border: none;
+    background-color: #B04759;
+    color: #F8F8F8;
+    font-size: 16px;
+}
+
+button.btn_del_admin:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(176,71,89,80%);
+}
+button.btn_add_admin {
+    border-radius: 0.6rem;
+    padding: 6px;
+    outline: none;
+    border: none;
+    background-color: #25AAE2;
+    color: #F8F8F8;
+    font-size: 16px;
+}
+
+button.btn_add_admin:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(13,109,149,80%);
+}
+
 
 @media screen and (max-width:600px){
     ul.topnav li.right,
