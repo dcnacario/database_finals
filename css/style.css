@@ -349,6 +349,64 @@ h2.container_h2 {
     padding: 1rem;  
 }
 
+/* LOGIN.php */
+
+div.login_container {
+    position: relative;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: #F8F8F8;
+    width: 30%;
+    border-radius: 0.5rem;
+    margin-top: 8%;
+    padding: 18px;
+}
+
+input.login_container {
+    border-radius: 1rem;
+    outline: none;
+    border: #25AAE2 1.5px solid;
+    width: 100%;
+    padding: 6px;
+    color: #25AAE2;
+}
+
+div.inner_login_container {
+    padding: 24px;
+}
+
+div.username_container {
+    margin-bottom: 4%;
+    margin-top: -4%;
+}
+
+div.password_container {
+    margin-bottom: 6%;
+}
+
+div.btn_container {
+    text-align: center;
+}
+
+button.btn_login {
+    border-radius: 0.6rem;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #25AAE2;
+    color: #F8F8F8;
+    font-size: 18px;
+}
+button.btn_login:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(13,109,149,80%);
+}
+
+h2,label {
+    color: #25AAE2;
+}
+
 
 @media screen and (max-width:600px){
     ul.topnav li.right,
