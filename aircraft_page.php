@@ -31,6 +31,11 @@
                 </div>
                 <h4>|</h4>
                 <button type="button" class="btn_add_admin" id="aircraftBtn">Add Aircraft<i class='bx bx-plus add'></i></button>
+                <div style="padding-left: 0.5%;">
+                <form action="./backend/logout.php">
+                <button type="submit" class="btn_logout_admin">Logout</button>
+                </form>
+                </div>
         </div>
 
         <div class="admin_container">
