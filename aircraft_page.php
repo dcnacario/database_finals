@@ -118,7 +118,7 @@
                                 require("./backend/fetchModel.php");
                                 while($modelRow = mysqli_fetch_array($result)){
                             ?>
-                                <option value="<?php echo $modelRow['MOD_CODE']?>"><?php echo $modelRow['MOD_CODE']?></option>
+                                <option value="<?php echo $modelRow['MOD_CODE']?>" <?php if ($aircraftRow['MOD_CODE'] == $modelRow['MOD_CODE']) echo 'selected';?>><?php echo $modelRow['MOD_CODE']?></option>
                                 <?php 
                                 }
                             ?>
