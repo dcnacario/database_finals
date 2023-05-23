@@ -96,7 +96,7 @@
                             <!-- Modal form content -->
                             <input type="hidden" name="modCode" value="<?php echo $modelRow['MOD_CODE'];?>">
                             <h1 style="text-align: center">Edit Model</h1>
-                            <div class="model_container">
+                            <div class="m   odel_container">
                                 <label>Manufacturer</label><br>
                                 <input type="text" class="model_input" name="modMan" value="<?php echo $modelRow['MOD_MANUFACTURER']; ?>">
                             </div>
