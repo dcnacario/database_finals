@@ -89,10 +89,15 @@
                 <?php 
                     require('./backend/fetchCharter.php');
                     while($charterRow = mysqli_fetch_array($resultCharter)){
+                        $modalId = "editCharter" . $charterRow['CHAR_TRIP'];
                 ?>
                 <tr>
                     <td><?php echo $charterRow['CHAR_TRIP']?></td>
-                    <td><?php echo $charterRow['CHAR_DATE']?></td>
+                    <td><?php 
+                    $charDate =  $charterRow['CHAR_DATE'];
+                    $formattedDate = date('Y-m-d', strtotime($charDate));
+                    echo $formattedDate;
+                    ?></td>
                     <td><?php echo $charterRow['AC_NUMBER']?></td>
                     <td><?php echo $charterRow['CHAR_DESTINATION']?></td>
                     <td><?php echo $charterRow['CHAR_DISTANCE']?></td>
@@ -102,17 +107,69 @@
                         <div class="button_content">
                         <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
                             <form action="./backend/deleteCharter.php" method="post">  
-                                <input type="hidden" name="acNumber" value="<?php echo $aircraftRow['AC_NUMBER'];?>">
+                                <input type="hidden" name="charTrip" value="<?php echo $charterRow['CHAR_TRIP'];?>">
                                 <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
                             </form>
                         </div>
                     </td>
                 </tr>
+                <!-- Edit Model Modal -->
+                <div id="<?php echo $modalId; ?>" class="model_modal">
+                    <!-- Modal content -->
+                    <div class="model_modal_content">
+                        <span class="close">&times;</span>
+                        <form action="./backend/editCharter.php" method="post">
+                    <h1 style="text-align: center">Edit Charter</h1>
+                    <div class="model_container">
+                        <label>Date</label><br>
+                        <?php 
+                        $charDate = $charterRow['CHAR_DATE'];
+                        $formattedDate = date('Y-m-d', strtotime($charDate));
+                        ?>
+                        <input type="date" class="model_input" name="charDate" value="<?php echo $formattedDate;?>">
+                    </div>
+                    <div class="model_container">
+                        
+                        <label>Aircraft Number</label><br>
+                        <select name="acNumber" class="model_input" value="<?php echo $charterRow['AC_NUMBER']?>">
+                        <?php 
+                            require('./backend/fetchAircraft.php');
+                            while($aircraftRow = mysqli_fetch_array($resultAircraft)){
+                        ?>
+                            <option value="<?php echo $aircraftRow['AC_NUMBER']?>" <?php if ($charterRow['AC_NUMBER'] == $aircraftRow['AC_NUMBER']) echo 'selected';?>><?php echo $aircraftRow['AC_NUMBER']?></option>
+                            <?php 
+                            }
+                        ?>
+                        </select>
+                    </div>
+                    <div class="model_container">
+                        <label>Destination</label><br>
+                        <input type="text" class="model_input" name="charDest" value="<?php echo $charterRow['CHAR_DESTINATION']?>">
+                    </div>
+                    <div class="model_container">
+                        <label>Distance</label><br>
+                        <input type="text" class="model_input" name="charDist" value="<?php echo $charterRow['CHAR_DESTINATION']?>">
+                    </div>
+                    <div class="model_container">
+                        <label>Hours Flown</label><br>
+                        <input type="text" class="model_input" name="charFlown" value="<?php echo $charterRow['CHAR_HOURS_FLOWN']?>">
+                    </div>
+                    <div class="model_container">
+                        <label>Hours Wait</label><br>
+                        <input type="text" class="model_input" name="charWait" value="<?php echo $charterRow['CHAR_HOURS_WAIT']?>">
+                    </div>
+                    <div class="model_container_button">
+                        <button type="submit" class="model_btn">Save</button>
+                    </div>
+                    </form>
+                    </div>
+                </div>
                 <?php
                     }
                 ?>
             </table>
         </div>
         <script src="./js/charterModal.js"></script>
+        <script src="./js/editCharter.js"></script>
     </body>
 </html>
