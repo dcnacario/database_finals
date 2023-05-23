@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Aerilon | Admin - Model</title>
+        <title>Aerilon | Admin - Aircraft</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image-x-icon" href="./resources/favicon.ico">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -22,33 +22,33 @@
                     </form>
                 </div>
                 <div class="indiv_button">
-                    <form action="aircraft_page.php">
-                    <button type="submit" class="btn_add_admin" >Aircraft</button>
+                    <form action="model_page.php">
+                    <button type="submit" class="btn_add_admin" >Model</button>
                     </form>
                 </div>
                 <h4>|</h4>
-                <button class="btn_add_admin" id="modelBtn">Add Model<i class='bx bx-plus add'></i></button>
+                <button class="btn_add_admin" id="aircraftBtn">Add Aircraft<i class='bx bx-plus add'></i></button>
         </div>
         <div class="admin_container">
-            <div id="modelModal" class="model_modal">
+            <div id="aircraftModal" class="model_modal">
                 <div class="model_modal_content">
                     <span class="close">&times;</span>
                     <form>
-                    <h1 style="text-align: center">Add Model</h1>
+                    <h1 style="text-align: center">Add Aircraft</h1>
                     <div class="model_container">
-                        <label>Manufacturer</label><br>
+                        <label>Model Code</label><br>
                         <input type="text" class="model_input">
                     </div>
                     <div class="model_container">
-                        <label>Name</label><br>
+                        <label>Aircraft ITF</label><br>
                         <input type="text" class="model_input">
                     </div>
                     <div class="model_container">
-                        <label>Seats</label><br>
+                        <label>Aircraft TTEL</label><br>
                         <input type="text" class="model_input">
                     </div>
                     <div class="model_container">
-                        <label>Charge Mile</label><br>
+                        <label>Aircraft TTER</label><br>
                         <input type="text" class="model_input">
                     </div>
                     <div class="model_container_button">
@@ -59,15 +59,15 @@
             </div>
             <table class="tb-container_admin">
                 <tr>
+                    <th>Aircraft No.</th>
                     <th>Model Code</th>
-                    <th>Manufacturer</th>
-                    <th>Name</th>
-                    <th>Seats</th>
-                    <th>Charge Per Mile</th>
+                    <th>Aircraft ITF</th>
+                    <th>Aircraft TTEL</th>
+                    <th>Aircraft TTER</th>
                     <th>Action</th>
                 </tr>
             </table>
         </div>
-        <script src="./js/modelModal.js"></script>
+        <script src="./js/aircraftModal.js"></script>
     </body>
 </html>
