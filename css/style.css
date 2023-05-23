@@ -306,6 +306,7 @@ table.tb-container {
     font-weight: 450;
 }
 
+
 /* sample */
     .lds-dual-ring {
     display: inline-block;
@@ -441,8 +442,15 @@ table.tb-container_admin {
 }
 
 .tb-container_admin th {
-    padding: 1.5rem;
-    font-weight: 250;
+    padding: 1rem 1rem 0rem 1rem;
+    font-weight: 450;
+    color: #25AAE2;
+}
+.tb-container_admin td {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 16px;
+    color: #5F5F5F;
 }
 
 button.btn_del_admin {
@@ -573,6 +581,45 @@ button.model_btn:hover {
 
 h1 {
     color: #25AAE2;
+}
+
+div.button_content {
+    margin-top: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+button.model_btn_edit {
+    color: #F8F8F8;
+    background-color: #25AAE2;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    width: 100%;
+}
+
+button.model_btn_edit:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+button.model_btn_delete {
+    color: #F8F8F8;
+    background-color: #B04759;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    width: 100%;
+    margin-left: 0.2rem;
+}
+
+button.model_btn_delete:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 @media screen and (max-width:600px){
