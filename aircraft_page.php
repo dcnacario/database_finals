@@ -1,3 +1,6 @@
+<?php 
+    require('./backend/fetchModel.php')
+?>
 <html>
     <head>
         <title>Aerilon | Admin - Aircraft</title>
@@ -27,17 +30,27 @@
                     </form>
                 </div>
                 <h4>|</h4>
-                <button class="btn_add_admin" id="aircraftBtn">Add Aircraft<i class='bx bx-plus add'></i></button>
+                <button type="button" class="btn_add_admin" id="aircraftBtn">Add Aircraft<i class='bx bx-plus add'></i></button>
         </div>
+
         <div class="admin_container">
             <div id="aircraftModal" class="model_modal">
                 <div class="model_modal_content">
                     <span class="close">&times;</span>
-                    <form>
+                    <form action="addAircraft.php">
                     <h1 style="text-align: center">Add Aircraft</h1>
                     <div class="model_container">
+                        
                         <label>Model Code</label><br>
-                        <input type="text" class="model_input">
+                        <select name="modCode" class="model_input">
+                        <?php 
+                            while($modelRow = mysqli_fetch_array($result)){
+                        ?>
+                            <option value="<?php echo $modelRow['MOD_CODE']?>"><?php echo $modelRow['MOD_CODE']?></option>
+                            <?php 
+                            }
+                        ?>
+                        </select>
                     </div>
                     <div class="model_container">
                         <label>Aircraft ITF</label><br>

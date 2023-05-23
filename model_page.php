@@ -80,7 +80,8 @@
                     <td>
                         <div class="button_content">
                         <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
-                            <form>  
+                            <form action="./backend/deleteModel.php" method="post">  
+                                <input type="hidden" name="modCode" value="<?php echo $modelRow['MOD_CODE'];?>">
                                 <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
                             </form>
                         </div>
@@ -93,6 +94,7 @@
                         <span class="close">&times;</span>
                         <form action="./backend/editModel.php" method="post">
                             <!-- Modal form content -->
+                            <input type="hidden" name="modCode" value="<?php echo $modelRow['MOD_CODE'];?>">
                             <h1 style="text-align: center">Edit Model</h1>
                             <div class="model_container">
                                 <label>Manufacturer</label><br>
