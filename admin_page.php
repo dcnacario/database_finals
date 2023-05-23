@@ -33,27 +33,41 @@
             <div id="charterModal" class="model_modal">
                 <div class="model_modal_content">
                     <span class="close">&times;</span>
-                    <form>
+                    <form action="./backend/addCharter.php" method="post">
                     <h1 style="text-align: center">Add Charter</h1>
                     <div class="model_container">
                         <label>Date</label><br>
-                        <input type="date" class="model_input">
+                        <input type="date" class="model_input" name="charDate">
                     </div>
                     <div class="model_container">
-                        <label>Aircraft No.</label><br>
-                        <input type="text" class="model_input">
+                        
+                        <label>Aircraft Number</label><br>
+                        <select name="acNumber" class="model_input">
+                        <?php 
+                            require('./backend/fetchAircraft.php');
+                            while($aircraftRow = mysqli_fetch_array($resultAircraft)){
+                        ?>
+                            <option value="<?php echo $aircraftRow['AC_NUMBER']?>"><?php echo $aircraftRow['AC_NUMBER']?></option>
+                            <?php 
+                            }
+                        ?>
+                        </select>
                     </div>
                     <div class="model_container">
                         <label>Destination</label><br>
-                        <input type="text" class="model_input">
+                        <input type="text" class="model_input" name="charDest">
+                    </div>
+                    <div class="model_container">
+                        <label>Distance</label><br>
+                        <input type="text" class="model_input" name="charDist">
                     </div>
                     <div class="model_container">
                         <label>Hours Flown</label><br>
-                        <input type="text" class="model_input">
+                        <input type="text" class="model_input" name="charFlown">
                     </div>
                     <div class="model_container">
                         <label>Hours Wait</label><br>
-                        <input type="text" class="model_input">
+                        <input type="text" class="model_input" name="charWait">
                     </div>
                     <div class="model_container_button">
                         <button type="submit" class="model_btn">Add</button>
@@ -72,6 +86,31 @@
                     <th>Hours Wait</th>
                     <th>Action</th>
                 </tr>
+                <?php 
+                    require('./backend/fetchCharter.php');
+                    while($charterRow = mysqli_fetch_array($resultCharter)){
+                ?>
+                <tr>
+                    <td><?php echo $charterRow['CHAR_TRIP']?></td>
+                    <td><?php echo $charterRow['CHAR_DATE']?></td>
+                    <td><?php echo $charterRow['AC_NUMBER']?></td>
+                    <td><?php echo $charterRow['CHAR_DESTINATION']?></td>
+                    <td><?php echo $charterRow['CHAR_DISTANCE']?></td>
+                    <td><?php echo $charterRow['CHAR_HOURS_FLOWN']?></td>
+                    <td><?php echo $charterRow['CHAR_HOURS_WAIT']?></td>
+                    <td>
+                        <div class="button_content">
+                        <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
+                            <form action="./backend/deleteCharter.php" method="post">  
+                                <input type="hidden" name="acNumber" value="<?php echo $aircraftRow['AC_NUMBER'];?>">
+                                <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <?php
+                    }
+                ?>
             </table>
         </div>
         <script src="./js/charterModal.js"></script>

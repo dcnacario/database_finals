@@ -96,7 +96,7 @@
                         <div class="button_content">
                         <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
                             <form action="./backend/deleteAircraft.php" method="post">  
-                                <input type="hidden" name="modCode" value="<?php echo $modelRow['MOD_CODE'];?>">
+                                <input type="hidden" name="acNumber" value="<?php echo $aircraftRow['AC_NUMBER'];?>">
                                 <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
                             </form>
                         </div>
