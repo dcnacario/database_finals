@@ -18,12 +18,8 @@
                 <form>
                     <button type="submit" class="btn_add_admin">Add</button>
                 </form>
-                <form>
-                    <button type="submit" class="btn_del_admin">Delete</button>
-                </form>
         </div>
         <div class="admin_container">
-            
             <table class="tb-container_admin">
                 <tr>
                     <th>Trip</th>
