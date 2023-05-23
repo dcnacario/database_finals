@@ -530,6 +530,10 @@ i.bx bx-plus.add {
     border-radius: 0.5rem;
 }
 
+.model_modal.show {
+    display: block;
+  }
+
 .close {
     color: #aaa;
     float: right;
