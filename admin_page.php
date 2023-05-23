@@ -3,6 +3,7 @@
         <title>Aerilon | Admin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image-x-icon" href="./resources/favicon.ico">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +16,17 @@
         </ul>
         <div class="button_nav">
                 <h3>Welcome! Admin</h3>
+                <div class="indiv_button">
+                    <form action="model_page.php">
+                    <button class="btn_add_admin">Model</button>
+                    </form>
+                </div>
+                <div class="indiv_button">
+                    <button class="btn_add_admin">Aircraft</button>
+                </div>
+                <h4>|</h4>
                 <form>
-                    <button type="submit" class="btn_add_admin">Add</button>
+                    <button type="submit" class="btn_add_admin">Add Charter<i class='bx bx-plus add'></i></button>
                 </form>
         </div>
         <div class="admin_container">
@@ -33,5 +43,6 @@
                 </tr>
             </table>
         </div>
+        <script src="./js/modelModal.js"></script>
     </body>
 </html>

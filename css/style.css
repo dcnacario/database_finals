@@ -434,15 +434,15 @@ div.button_nav {
 table.tb-container_admin {
     margin-left: auto;
     margin-right: auto;
-    padding: 4px;
+    padding: 2px;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     border-radius: 1rem;
     margin-top: 1%;
 }
 
 .tb-container_admin th {
-    padding: 2rem;
-    font-weight: 450;
+    padding: 1.5rem;
+    font-weight: 250;
 }
 
 button.btn_del_admin {
@@ -477,11 +477,103 @@ button.btn_add_admin:hover {
 }
 h3 {
     margin-top: 0.5%;
-    padding-right: 5%;
+    padding-right: 4%;
     color: #25AAE2;
     text-align: center;
 }
 
+h4 {
+    margin-top: 0.3%;
+    color: #25AAE2;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 20px;
+}
+
+div.indiv_button {
+    padding-right: 4px;
+}
+
+i.bx bx-plus.add {
+    font-size: 32px;
+}
+
+/* CSS for Model Modal */
+.model_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.model_modal_content {
+    background-color: #F8F8F8;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 0.5rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input.model_input {
+    border-radius: 0.6rem;
+    outline: none;
+    border: #25AAE2 1.5px solid;
+    width: 100%;
+    padding: 6px;
+    color: #25AAE2;
+}
+
+div.model_container {
+    padding-bottom: 2%;
+}
+div.model_container_button {
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+button.model_btn {
+    border-radius: 0.6rem;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: #25AAE2;
+    color: #F8F8F8;
+    font-size: 16px;
+    width: 30%;
+}
+
+button.model_btn:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(13,109,149,80%);
+}
+
+h1 {
+    color: #25AAE2;
+}
 
 @media screen and (max-width:600px){
     ul.topnav li.right,
