@@ -18,19 +18,18 @@
                 <li class="right"><a href="#">Meet the Crew</a></li>
             </div>
         </ul>
-        <div class="lds-dual-ring"></div>
-                <!-- Book now -->
+        <!-- Book now -->
         <div class="content-container">
             <div class="content-item" id="content-item">
                 <form action="showFlights.php" method="post">
                     <div class="content-origin">
                     <span class="p-flight"><i class="material-icons">flight</i>Flight</span>
                     <span class="sp-flight-to">To</span>
-                    <input type="text" placeholder="Origin" class="content-textbox-origin">
+                    <input type="text" placeholder="Cebu" class="content-textbox-origin" readonly>
                     </div>
                     <div class="content-destination">
                     <span class="sp-flight-to">From</span>
-                    <input type="text" placeholder="Destination" class="content-textbox-destination">
+                    <input type="text" placeholder="Destination" class="content-textbox-destination" name="searchDestination">
                     </div>
                     <div class="content-button">
                     <button type="submit" class="btn-flight">Search flight</button>

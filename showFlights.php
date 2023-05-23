@@ -1,3 +1,10 @@
+<?php 
+    require('local_setting.php');
+    $destination = $_POST['searchDestination'];
+
+    $sql = "SELECT * FROM charter WHERE CHAR_DESTINATION LIKE '%{$destination}%'";
+    $result = mysqli_query($conn, $sql);  
+?>
 <html>
     <head>
         <title>Aerilon | Search Flights</title>
@@ -29,8 +36,24 @@
                 <th>Distance</th>
                 <th>Hours Flown</th>
                 <th>Hours Wait</th>
-                <th></th>
+                <th>Book Now</th>
             </tr>
+            <?php 
+                while($row = mysqli_fetch_array($result)){
+
+            ?>
+            <tr>
+                <td><?php echo $row['CHAR_TRIP']?></td>
+                <td><?php echo date(('Y-m-d'),strtotime($row['CHAR_DATE']))?></td>
+                <td><?php echo $row['AC_NUMBER']?></td>
+                <td><?php echo $row['CHAR_DESTINATION']?></td>
+                <td><?php echo $row['CHAR_DISTANCE']?></td>
+                <td><?php echo $row['CHAR_HOURS_FLOWN']?></td>
+                <td><?php echo $row['CHAR_HOURS_WAIT']?></td>
+            </tr>
+            <?php 
+            }
+            ?>
         </table>
         <img src="./resources/clouds.svg" class="img-bg">
         </div>
