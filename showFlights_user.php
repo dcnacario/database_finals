@@ -1,5 +1,22 @@
 <?php
     require('./local_setting.php');
+    require('./backend/fetchUser.php');
+    require('./backend/fetchBooking.php');
+
+
+    $arrayUser = array();
+    $cosCode = $_REQUEST['cosCode'];
+    $sql = "SELECT * FROM booking WHERE CUS_CODE = '$cosCode'";
+    $sqlResult = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_array($sqlResult)){
+        $arrayUser['CHAR_TRIP'] = $row['CHAR_TRIP'];
+        $arrayUser['CUS_CODE'] = $row['CUS_CODE'];
+    }
+
+    while($row = mysqli_fetch_array($result)){
+        $arrayUser['username'] = $row['username'];
+    }
+
     // Check if the search form is submitted
     if(isset($_POST['searchDestination'])) {
         $destination = $_POST['searchDestination'];
@@ -27,20 +44,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     </head>
     <body>
-        <ul class="topnav">
-        <li class="logo"><a href="./index.php"><img src="./resources/logo.svg" width="10%"></a></li>
-            <div class="right_group">
-                <li class="right"><a href="login.php">Login</a></li>
-            </div>
-        </ul>
-        <div class="showflight-container">
-            <div class="search_container">
-                <form action="showFlights.php" method="post">
-                <input type="text" name="searchDestination" class="search_bar" placeholder="Search Destination">
-                <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+            <ul class="topnav_admin">
+                    <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
+                </ul>
+                <div class="button_nav">
+                        <h3>Welcome! <?php echo $arrayUser['username']?></h3>
+                        <div class="indiv_button">
+                            <form action="user_page.php">
+                            <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
+                            <button class="btn_add_admin">Booking</button>
+                            </form>
+                </div>
+                <h4>|</h4>
+                <form action="showFlights_user.php">
+                <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
+                <button type="submit" class="btn_add_admin" id="charterBtn">Book a Flight<i class='bx bx-plus add'></i></button>
                 </form>
-            </div>
-        <span class="showflight-text">The world is yours to <span class="showflight-colored">EXPLORE</span></span>
+                <div style="padding-left: 0.5%;">
+                <form action="./backend/logout.php">
+                <button type="submit" class="btn_logout_admin">Logout</button>
+                </form>
+                </div>
+        </div>
         <table class="tb-container">
             <tr>
                 <th>Trip</th>
@@ -66,8 +91,9 @@
                 <td><?php echo $row['CHAR_HOURS_FLOWN']?></td>
                 <td><?php echo $row['CHAR_HOURS_WAIT']?></td>
                 <td>
-                    <form action="registerCustomer.php" method="post">
-                        <input type="hidden" name="charTrip" value="<?php echo $row['CHAR_TRIP']?>">
+                    <form action="./backend/booking_user.php" method="post">
+                        <input type="hidden" name="charTrip" value="<?php echo $arrayUser['CHAR_TRIP']?>">
+                        <input type="hidden" name="cusCode" value="<?php echo $arrayUser['CUS_CODE']?>">
                         <button type="submit" class="model_btn_edit"><i class='bx bxs-calendar-check'></i></button>
                     </form>
                 </td>

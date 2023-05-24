@@ -16,14 +16,14 @@
         FROM customer
         INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
         INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
-        WHERE booking.CUS_CODE = '$cosCode'";
+        WHERE booking.CUS_CODE = '$cosCode' AND booking.BOOKING_STATUS = 1";
     } else {
         $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
         customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER, booking.BOOKING_ID, booking.BOOKING_STATUS 
         FROM customer
         INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
         INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
-        WHERE booking.CUS_CODE = '$cosCode'";
+        WHERE booking.CUS_CODE = '$cosCode' AND booking.BOOKING_STATUS = 1";
     }
 
     $sqlTicketResult = mysqli_query($conn, $sqlTicket);
@@ -48,10 +48,15 @@
                 <h3>Welcome! <?php echo $arrayUser['username']?></h3>
                 <div class="indiv_button">
                     <form action="user_page.php">
+                    <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
                     <button class="btn_add_admin">Booking</button>
                     </form>
                 </div>
                 <h4>|</h4>
+                <form action="showFlights_user.php">
+                <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
+                <button type="submit" class="btn_add_admin" id="charterBtn">Book a Flight<i class='bx bx-plus add'></i></button>
+                </form>
                 <div style="padding-left: 0.5%;">
                 <form action="./backend/logout.php">
                 <button type="submit" class="btn_logout_admin">Logout</button>
@@ -70,14 +75,7 @@
                     <th>Payment</th>
                     <th>Status</th>
                     <th>Action</th>
-                </tr>
-                <div class="search_container">
-                    <form action="booking_page.php" method="post">
-                        <input type="text" name="searchDestination" class="search_bar" placeholder="Search Booking ID">
-                        <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
-                    </form>
-                </div>
-                
+                </tr>  
                 <?php 
 
                     while($bookingRow = mysqli_fetch_array($sqlTicketResult)) {
@@ -111,8 +109,8 @@
                     <td>
                         <div class="button_content">
                         <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
-                            <form action="./backend/deleteBooking.php" method="post">  
-                                <input type="hidden" name="searchDestination" class="search_bar" placeholder="Search Booking ID">
+                            <form action="./backend/deleteBooking_user.php" method="post">  
+                                <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
                                 <input type="hidden" name="bookingId" value="<?php echo $bookingRow['BOOKING_ID'];?>">
                                 <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
                             </form>
@@ -183,6 +181,6 @@
                ?>
             </table>
         </div>
-        <script src="./js/editCustomer.js"></script>
+        <script src="./js/charterModal.js"></script>
     </body>
 </html>

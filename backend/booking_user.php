@@ -25,6 +25,6 @@
 
     $lastInsertedID = mysqli_insert_id($conn);
 
-    header("Location: ../ticket.php?bookId=$lastInsertedID");
+    header("Location: ../ticket_user.php?bookId=$lastInsertedID&cusCode=$cusCode");
 
 ?>

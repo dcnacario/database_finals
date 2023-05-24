@@ -1,7 +1,5 @@
 <?php 
     require('./local_setting.php');
-
-    
     // Check if the search form is submitted
     if(isset($_POST['searchDestination'])) {
         $searchDestination = $_POST['searchDestination'];
