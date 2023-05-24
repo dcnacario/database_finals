@@ -47,13 +47,19 @@
                         <label>Phone No.</label><br>
                         <input type="text" class="model_input" required name="phone">
                     </div>
+                    <div class="model_container">
+                        <label>Username</label><br>
+                        <input type="text" class="model_input" required name="user">
+                    </div>
+                    <div class="model_container">
+                        <label>Password</label><br>
+                        <input type="password" class="model_input" required name="pass">
+                    </div>
                     <div class="model_container_button">
                         <button type="submit" class="model_btn">Register</button>
                     </div>
                 </form>
             </div>
         </div>
-
-        <img src="./resources/clouds.svg" class="img-bg">
     </body>
 </html>

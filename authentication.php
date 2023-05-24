@@ -17,7 +17,12 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 if ($isValidCredentials) {
+    if($username == "admin" && $password == "admin") {
     header('Location: ./admin_page.php');
+    }
+    else {
+    header('Location:./user_page.php');
+    }
 } else {
     header('Location: ./login.php?error=invalid_credentials');
     exit();
