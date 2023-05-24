@@ -158,6 +158,7 @@
                     <div class="model_modal_content">
                         <span class="close">&times;</span>
                         <form action="./backend/editCharter.php" method="post">
+                            <input type="hidden" name="charTrip" value="<?php echo $charterRow['CHAR_TRIP'];?>">
                     <h1 style="text-align: center">Edit Charter</h1>
                     <div class="model_container">
                         <label>Date</label><br>

@@ -1,15 +1,27 @@
 <?php 
     require('./local_setting.php');
 
-    $destination = $_POST['searchDestination'];
+    
+    // Check if the search form is submitted
+    if(isset($_POST['searchDestination'])) {
+        $searchDestination = $_POST['searchDestination'];
 
-    $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
-    customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER, booking.BOOKING_ID, booking.BOOKING_STATUS FROM customer
-    INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
-    INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
-    WHERE BOOKING_ID LIKE '%$destination%'";
+        $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
+        customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER, booking.BOOKING_ID, booking.BOOKING_STATUS 
+        FROM customer
+        INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
+        INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
+        WHERE booking.BOOKING_ID LIKE '%$searchDestination%'";
+    } else {
+        $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
+        customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER, booking.BOOKING_ID, booking.BOOKING_STATUS 
+        FROM customer
+        INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
+        INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP";
+    }
 
     $sqlTicketResult = mysqli_query($conn, $sqlTicket);
+?>
 ?>
 <html>
     <head>
@@ -115,6 +127,7 @@
                         <div class="button_content">
                         <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
                             <form action="./backend/deleteBooking.php" method="post">  
+                                <input type="hidden" name="searchDestination" class="search_bar" placeholder="Search Booking ID">
                                 <input type="hidden" name="bookingId" value="<?php echo $bookingRow['BOOKING_ID'];?>">
                                 <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
                             </form>
@@ -128,6 +141,7 @@
                         <span class="close">&times;</span>
                         <form action="./backend/editBooking.php" method="post">
                         <input type="hidden" name="bookingId" value="<?php echo $bookingRow['BOOKING_ID']?>">
+                        <input type="hidden" name="searchDestination" class="search_bar" placeholder="Search Booking ID">
                         <h1 style="text-align: center">Edit Booking</h1>
                         <div class="model_container">
                             <label>Charter No.</label><br>
