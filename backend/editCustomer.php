@@ -8,7 +8,7 @@
     $phone = $_POST['phone'];
 
     $sql = "UPDATE customer SET CUS_LNAME = '{$lName}',
-    CUS_FNAME = '{$fName}', CUS_INITIAL = '{$initial}', CUS_AREACODE = {$areaCode}, CUS_PHONE = {$phone} WHERE CUS_CODE = {$cusCode}";
+    CUS_FNAME = '{$fName}', CUS_INITIAL = '{$initial}', CUS_AREACODE = {$areaCode}, CUS_PHONE = '{$phone}' WHERE CUS_CODE = {$cusCode}";
     $result = mysqli_query($conn, $sql);
     header("Location: ../customer_page.php");
 ?>

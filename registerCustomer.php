@@ -19,6 +19,36 @@
                 <li class="right"><a href="login.php">Login</a></li>
             </div>
         </ul>
+        <div class="customer_container">
+            <div class="customer_content">
+                <form action="./backend/addCustomer.php" method="post">
+                    <h1 style="text-align: center;">Register Customer</h1>
+                    <div class="model_container">
+                        <label>Last Name</label><br>
+                        <input type="text" class="model_input" required name="lName">
+                    </div>
+                    <div class="model_container">
+                        <label>First Name</label><br>
+                        <input type="text" class="model_input" required name="fName">
+                    </div>
+                    <div class="model_container">
+                        <label>Initial</label><br>
+                        <input type="text" class="model_input" required name="initial">
+                    </div>
+                    <div class="model_container">
+                        <label>Area Code</label><br>
+                        <input type="text" class="model_input" required name="areaCode">
+                    </div>
+                    <div class="model_container">
+                        <label>Phone No.</label><br>
+                        <input type="text" class="model_input" required name="phone">
+                    </div>
+                    <div class="model_container_button">
+                        <button type="submit" class="model_btn">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <img src="./resources/clouds.svg" class="img-bg">
     </body>
