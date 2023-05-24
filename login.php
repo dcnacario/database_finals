@@ -1,6 +1,3 @@
-<?php 
-
-?>
 <html>
     <head>
         <title>Aerilon | Login</title>
@@ -21,8 +18,14 @@
             </div>
         </ul>
         <div class="login_container">
+        <?php
+        // Check if an error message is present in the URL
+        if (isset($_GET['error']) && $_GET['error'] === 'invalid_credentials') {
+            echo '<p style="color: red; text-align: center;">Invalid credentials. Please try again.</p>';
+        }
+        ?>
             <h2 style="text-align: center;">Admin</h2>
-            <form method="post" action="./backend/authentication.php">
+            <form method="post" action="./authentication.php">
                 <div class="inner_login_container">
                     <div class="username_container">
                         <label>Username</label>
