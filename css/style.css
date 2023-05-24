@@ -330,17 +330,123 @@ table.tb-container {
 /* CSS ticket */
 
 div.container_ticket {
-    position: relative;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     background-color: #F8F8F8;
-    width: 40%;
-    border-radius: 1rem;
+    width: 25%;
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+    min-height: 600px;
 }
 
-h2.container_h2 {
+span.container_h2 {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    color: #F8F8F8;
+    font-weight: 450;
+    font-size: 32px;
+}
+span.container_icon {
+    position: absolute;
+    color: #F8F8F8;
+    top: 45%;
+    left: 75%;
+}
+span.container_to {
+    position: absolute;
+    color: #F8F8F8;
+    top: 80%;
+    left: 75%;
+}
+span.container_to_large {
+    position: absolute;
+    color: #F8F8F8;
+    top: 65%;
+    left: 15%;
+    font-size: 50px;
+    font-weight: bolder;
+}
+span.container_from_large {
+    position: absolute;
+    color: #25AAE2;
+    top: 50%;
+    left: 10%;
+    font-size: 42px;
+    font-weight: bolder;
+    text-shadow: -1px 0 #F8F8F8, 0 1px #F8F8F8, 1px 0 #F8F8F8, 0 -1px #F8F8F8;
+}
+span.container_from {
+    position: absolute;
+    color: #F8F8F8;
+    top: 70%;
+    left: 75%;
+}
+
+div.subcontainer_ticket {
+    background-color: #25AAE2;
+    height: 30%;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
     text-align: center;
-    padding: 1rem;  
+    position: relative;
+}
+div.subcontainer_bottom {
+    margin-top: 0.1rem;
+    background-color: #F8F8F8;
+    height: 25%;
+    text-align: center;
+    position: relative;
+}
+
+span.container_charter{
+    position: absolute;
+    color: #5F5F5F;
+    top: 10%;
+    left: 5%;
+}
+span.container_charter_content{
+    position: absolute;
+    color: #25AAE2;
+    top: 20%;
+    left: 15%;
+}
+span.container_passenger{
+    position: absolute;
+    color: #5F5F5F;
+    top: 55%;
+    left: 5%;
+}
+span.container_passenger_content{
+    position: absolute;
+    color: #25AAE2;
+    top: 65%;
+    left: 5%;
+}
+span.container_date{
+    position: absolute;
+    color: #5F5F5F;
+    top: 10%;
+    left: 60%;
+}
+span.container_date_content{
+    position: absolute;
+    color: #25AAE2;
+    top: 20%;
+    left: 60%;
+}
+span.container_payment{
+    position: absolute;
+    color: #5F5F5F;
+    top: 85%;
+    left: 40%;
+}
+span.container_payment_content{
+    position: absolute;
+    color: #25AAE2;
+    top: 95%;
+    left: 40%;
 }
 
 /* LOGIN.php */

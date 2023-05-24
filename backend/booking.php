@@ -23,6 +23,8 @@
     $sql = "INSERT INTO booking VALUES('',{$cusCode},{$charTrip},({$resultArray['CHAR_DISTANCE']}*{$resultArray['MOD_CHG_MILE']}),1)";
     $resultSql = $conn->query($sql);
 
-    header("Location: ../ticket.php");
+    $lastInsertedID = mysqli_insert_id($conn);
+
+    header("Location: ../ticket.php?bookId=$lastInsertedID");
 
 ?>
