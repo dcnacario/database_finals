@@ -3,7 +3,7 @@
     $bookId = $_GET['bookId'];
 
     $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
-    customer.CUS_INITIAL, booking.PAYMENT FROM customer
+    customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER FROM customer
     INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
     INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP 
     WHERE booking.BOOKING_ID = '{$bookId}'";
@@ -60,6 +60,13 @@
                 </span>
                 <span class="container_payment">Payment</span>
                 <span class="container_payment_content">₱<?php echo $rowTicket['PAYMENT']?></span>
+                <span class="container_aircraft">Aircraft No.</span>
+                <span class="container_aircraft_content"><?php echo $rowTicket['AC_NUMBER']?></span>
+            </div>
+            <div class="ticket_btn_container">
+            <form action="searchFlight.php">
+                <button type="submit" class="btn_ticket">OK</button>
+            </form>
             </div>
             <?php 
                 }

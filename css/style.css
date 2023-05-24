@@ -415,26 +415,26 @@ span.container_charter_content{
 span.container_passenger{
     position: absolute;
     color: #5F5F5F;
-    top: 55%;
+    top: 50%;
     left: 5%;
 }
 span.container_passenger_content{
     position: absolute;
     color: #25AAE2;
-    top: 65%;
+    top: 60%;
     left: 5%;
 }
 span.container_date{
     position: absolute;
     color: #5F5F5F;
     top: 10%;
-    left: 60%;
+    left: 70%;
 }
 span.container_date_content{
     position: absolute;
     color: #25AAE2;
     top: 20%;
-    left: 60%;
+    left: 70%;
 }
 span.container_payment{
     position: absolute;
@@ -447,6 +447,37 @@ span.container_payment_content{
     color: #25AAE2;
     top: 95%;
     left: 40%;
+}
+span.container_aircraft{
+    position: absolute;
+    color: #5F5F5F;
+    top: 50%;
+    left: 70%;
+}
+span.container_aircraft_content{
+    position: absolute;
+    color: #25AAE2;
+    top: 60%;
+    left: 80%;
+}
+
+button.btn_ticket {
+    border-radius: 0.3rem;
+    padding: 8px 16px;
+    margin-left: 1px;
+    outline: none;
+    border: none;
+    background-color: #25AAE2;
+    color: #F8F8F8;
+    font-size: 18px;
+}
+button.btn_ticket:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+div.ticket_btn_container {
+    margin-top: 5rem;
+    text-align: center;
 }
 
 /* LOGIN.php */
