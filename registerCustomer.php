@@ -1,3 +1,6 @@
+<?php 
+    $charTrip = $_POST['charTrip'];
+?>
 <html>
     <head>
         <title>Aerilon | Search Flights</title>
@@ -22,6 +25,7 @@
         <div class="customer_container">
             <div class="customer_content">
                 <form action="./backend/addCustomer.php" method="post">
+                    <input type="hidden" name="charTrip" value="<?php echo $charTrip?>">
                     <h1 style="text-align: center;">Register Customer</h1>
                     <div class="model_container">
                         <label>Last Name</label><br>

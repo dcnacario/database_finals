@@ -59,7 +59,8 @@
                 <td><?php echo $row['CHAR_HOURS_FLOWN']?></td>
                 <td><?php echo $row['CHAR_HOURS_WAIT']?></td>
                 <td>
-                    <form action="registerCustomer.php">
+                    <form action="registerCustomer.php" method="post">
+                        <input type="hidden" name="charTrip" value="<?php echo $row['CHAR_TRIP']?>">
                         <button type="submit" class="model_btn_edit"><i class='bx bxs-calendar-check'></i></button>
                     </form>
                 </td>
