@@ -1,5 +1,5 @@
 <?php 
-    require('./backend/fetchModel.php')
+    require('./backend/fetchAircraft.php')
 ?>
 <html>
     <head>
@@ -32,6 +32,11 @@
                 <div class="indiv_button">
                     <form action="aircraft_page.php">
                     <button class="btn_add_admin">Aircraft</button>
+                    </form>
+                </div>
+                <div class="indiv_button">
+                    <form action="customer_page.php">
+                    <button class="btn_add_admin">Customer</button>
                     </form>
                 </div>
                 <h4>|</h4>
