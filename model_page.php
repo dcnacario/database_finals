@@ -31,6 +31,11 @@
                     <button class="btn_add_admin">Aircraft</button>
                     </form>
                 </div>
+                <div class="indiv_button">
+                    <form action="customer_page.php">
+                    <button class="btn_add_admin">Customer</button>
+                    </form>
+                </div>
                 <h4>|</h4>
                 <button class="btn_add_admin" id="modelBtn">Add Model<i class='bx bx-plus add'></i></button>
                 <div style="padding-left: 0.5%;">

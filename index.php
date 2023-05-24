@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <body>
         <ul class="topnav">
-            <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
+            <li class="logo"><a href="./index.php"><img src="./resources/logo.svg" width="10%"></a></li>
             <div class="right_group">
                 <li class="right"><a href="login.php">Login</a></li>
             </div>
