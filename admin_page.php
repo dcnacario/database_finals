@@ -17,6 +17,11 @@
         <div class="button_nav">
                 <h3>Welcome! Admin</h3>
                 <div class="indiv_button">
+                    <form action="admin_page.php">
+                    <button class="btn_add_admin">Charter</button>
+                    </form>
+                </div>
+                <div class="indiv_button">
                     <form action="model_page.php">
                     <button class="btn_add_admin">Model</button>
                     </form>

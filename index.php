@@ -12,8 +12,7 @@
         <ul class="topnav">
             <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
             <div class="right_group">
-                <li class="right_search"><input type="text" placeholder="Search" class="search_bar"></li>
-                <li class="right"><a href="#">Meet the Crew</a></li>
+                <li class="right"><a href="login.php">Login</a></li>
             </div>
         </ul>
         <span class="content-text">The world is yours to <span class="content-colored">EXPLORE</span></span>
