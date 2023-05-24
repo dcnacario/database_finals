@@ -1,7 +1,5 @@
 var modal = document.getElementById('charterModal');
-
 var btn = document.getElementById('charterBtn');
-
 var span = document.getElementsByClassName('close')[0];
 
 btn.onclick = function() {
@@ -13,7 +11,7 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
-}   
+}

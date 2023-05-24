@@ -36,6 +36,11 @@
                     <button class="btn_add_admin">Customer</button>
                     </form>
                 </div>
+                <div class="indiv_button">
+                    <form action="booking_page.php">
+                    <button class="btn_add_admin">Booking</button>
+                    </form>
+                </div>
                 <h4>|</h4>
                 <button type="submit" class="btn_add_admin" id="charterBtn">Add Charter<i class='bx bx-plus add'></i></button>
                 <div style="padding-left: 0.5%;">
@@ -184,7 +189,7 @@
                 ?>
             </table>
         </div>
-        <script src="./js/charterModal.js"></script>
         <script src="./js/editCharter.js"></script>
+        <script src="./js/charterModal.js"></script>
     </body>
 </html>

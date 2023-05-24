@@ -36,6 +36,11 @@
                     <button class="btn_add_admin">Customer</button>
                     </form>
                 </div>
+                <div class="indiv_button">
+                    <form action="booking_page.php">
+                    <button class="btn_add_admin">Booking</button>
+                    </form>
+                </div>
                 <h4>|</h4>
                 <button class="btn_add_admin" id="modelBtn">Add Model<i class='bx bx-plus add'></i></button>
                 <div style="padding-left: 0.5%;">
@@ -138,7 +143,7 @@
                 ?>
             </table>
         </div>
-        <script src="./js/modelModal.js"></script>
         <script src="./js/editModel.js"></script>
+        <script src="./js/modelModal.js"></script>
     </body>
 </html>

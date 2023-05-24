@@ -1,5 +1,5 @@
 <?php 
-    require('./backend/fetchAircraft.php')
+    require('./backend/fetchModel.php')
 ?>
 <html>
     <head>
@@ -39,6 +39,11 @@
                     <button class="btn_add_admin">Customer</button>
                     </form>
                 </div>
+                <div class="indiv_button">
+                    <form action="booking_page.php">
+                    <button class="btn_add_admin">Booking</button>
+                    </form>
+                </div>
                 <h4>|</h4>
                 <button type="button" class="btn_add_admin" id="aircraftBtn">Add Aircraft<i class='bx bx-plus add'></i></button>
                 <div style="padding-left: 0.5%;">
@@ -54,8 +59,7 @@
                     <span class="close">&times;</span>
                     <form action="./backend/addAircraft.php" method="post">
                     <h1 style="text-align: center">Add Aircraft</h1>
-                    <div class="model_container">
-                        
+                    <div class="model_container">             
                         <label>Model Code</label><br>
                         <select name="modCode" class="model_input">
                         <?php 
@@ -162,7 +166,7 @@
                ?>
             </table>
         </div>
-        <script src="./js/aircraftModal.js"></script>
         <script src="./js/editAircraft.js"></script>
+        <script src="./js/aircraftModal.js"></script>
     </body>
 </html>
