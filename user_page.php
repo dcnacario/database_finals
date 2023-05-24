@@ -1,6 +1,11 @@
 <?php 
     require('./local_setting.php');
-
+    require('./backend/fetchUser.php');
+    $arrayUser = array();
+    $cosCode = $_REQUEST['cosCode'];
+    while($row = mysqli_fetch_array($result)){
+        $arrayUser['username'] = $row['username'];
+    }
     
     // Check if the search form is submitted
     if(isset($_POST['searchDestination'])) {
@@ -11,20 +16,21 @@
         FROM customer
         INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
         INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
-        WHERE booking.BOOKING_ID LIKE '%$searchDestination%'";
+        WHERE booking.CUS_CODE = '$cosCode'";
     } else {
         $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
         customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER, booking.BOOKING_ID, booking.BOOKING_STATUS 
         FROM customer
         INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
-        INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP";
+        INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
+        WHERE booking.CUS_CODE = '$cosCode'";
     }
 
     $sqlTicketResult = mysqli_query($conn, $sqlTicket);
 ?>
 <html>
     <head>
-        <title>Aerilon | Admin - Bookings</title>
+        <title>Aerilon | Hello! <?php echo $arrayUser['username']?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image-x-icon" href="./resources/favicon.ico">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -39,29 +45,9 @@
             <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
         </ul>
         <div class="button_nav">
-                <h3>Welcome! Admin</h3>
+                <h3>Welcome! <?php echo $arrayUser['username']?></h3>
                 <div class="indiv_button">
-                    <form action="admin_page.php">
-                    <button class="btn_add_admin">Charter</button>
-                    </form>
-                </div>
-                <div class="indiv_button">
-                    <form action="model_page.php">
-                    <button class="btn_add_admin">Model</button>
-                    </form>
-                </div>
-                <div class="indiv_button">
-                    <form action="aircraft_page.php">
-                    <button class="btn_add_admin">Aircraft</button>
-                    </form>
-                </div>
-                <div class="indiv_button">
-                    <form action="customer_page.php">
-                    <button class="btn_add_admin">Customer</button>
-                    </form>
-                </div>
-                <div class="indiv_button">
-                    <form action="booking_page.php">
+                    <form action="user_page.php">
                     <button class="btn_add_admin">Booking</button>
                     </form>
                 </div>
@@ -72,7 +58,7 @@
                 </form>
                 </div>
         </div>
-            <table class="tb-container_admin">
+        <table class="tb-container_admin">
                 <tr>
                     <th>Booking ID.</th>
                     <th>Trip No.</th>
@@ -138,9 +124,9 @@
                     <!-- Modal content -->
                     <div class="model_modal_content">
                         <span class="close">&times;</span>
-                        <form action="./backend/editBooking.php" method="post">
+                        <form action="./backend/editBooking_user.php?cosCode=<?php echo $cosCode?>" method="post">
                         <input type="hidden" name="bookingId" value="<?php echo $bookingRow['BOOKING_ID']?>">
-                        <input type="hidden" name="searchDestination" class="search_bar" placeholder="Search Booking ID">
+                        <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
                         <h1 style="text-align: center">Edit Booking</h1>
                         <div class="model_container">
                             <label>Charter No.</label><br>
