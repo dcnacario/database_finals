@@ -1,3 +1,17 @@
+<?php
+    require('./local_setting.php');
+    // Check if the search form is submitted
+    if(isset($_POST['searchDestination'])) {
+        $destination = $_POST['searchDestination'];
+
+        $sql = "SELECT * FROM charter WHERE CHAR_DESTINATION LIKE '%$destination%'";
+        $result = mysqli_query($conn, $sql);
+    } else {
+        // If the search form is not submitted, retrieve all charters
+        $sql = "SELECT * FROM charter";
+        $result = mysqli_query($conn, $sql);
+    }
+?>
 <html>
     <head>
         <title>Aerilon | Admin - Charter</title>
@@ -95,6 +109,12 @@
                     </form>
                 </div>
             </div>
+            <div class="search_container">
+                <form action="admin_page.php" method="post">
+                    <input type="text" name="searchDestination" class="search_bar" placeholder="Search Destination">
+                    <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+                </form>
+            </div>
             <table class="tb-container_admin">
                 <tr>
                     <th>Trip</th>
@@ -107,8 +127,7 @@
                     <th>Action</th>
                 </tr>
                 <?php 
-                    require('./backend/fetchCharter.php');
-                    while($charterRow = mysqli_fetch_array($resultCharter)){
+                    while($charterRow = mysqli_fetch_array($result)){
                         $modalId = "editCharter" . $charterRow['CHAR_TRIP'];
                 ?>
                 <tr>
@@ -168,7 +187,7 @@
                     </div>
                     <div class="model_container">
                         <label>Distance</label><br>
-                        <input type="text" class="model_input" name="charDist" value="<?php echo $charterRow['CHAR_DESTINATION']?>">
+                        <input type="text" class="model_input" name="charDist" value="<?php echo $charterRow['CHAR_DISTANCE']?>">
                     </div>
                     <div class="model_container">
                         <label>Hours Flown</label><br>

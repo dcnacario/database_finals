@@ -1,11 +1,13 @@
 <?php 
-    require('./backend/fetchBooking.php');
+    require('./local_setting.php');
 
+    $destination = $_POST['searchDestination'];
 
     $sqlTicket = "SELECT charter.CHAR_DESTINATION, charter.CHAR_TRIP, charter.CHAR_DATE, customer.CUS_LNAME, customer.CUS_FNAME, 
     customer.CUS_INITIAL, booking.PAYMENT, charter.AC_NUMBER, booking.BOOKING_ID, booking.BOOKING_STATUS FROM customer
     INNER JOIN booking ON customer.CUS_CODE = booking.CUS_CODE
-    INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP";
+    INNER JOIN charter ON booking.CHAR_TRIP = charter.CHAR_TRIP
+    WHERE BOOKING_ID LIKE '%$destination%'";
 
     $sqlTicketResult = mysqli_query($conn, $sqlTicket);
 ?>
@@ -72,6 +74,12 @@
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
+                <div class="search_container">
+                    <form action="booking_page.php" method="post">
+                        <input type="text" name="searchDestination" class="search_bar" placeholder="Search Booking ID">
+                        <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+                    </form>
+                </div>
                 
                 <?php 
 
@@ -107,7 +115,7 @@
                         <div class="button_content">
                         <button class="model_btn_edit" data-modal-id="<?php echo $modalId; ?>"><i class='bx bxs-edit'></i></button>
                             <form action="./backend/deleteBooking.php" method="post">  
-                                <input type="hidden" name="cusCode" value="<?php echo $customerRow['CUS_CODE'];?>">
+                                <input type="hidden" name="bookingId" value="<?php echo $bookingRow['BOOKING_ID'];?>">
                                 <button type="submit" class="model_btn_delete"><i class='bx bx-trash' ></i></button>
                             </form>
                         </div>
@@ -160,7 +168,10 @@
                         </div>
                         <div class="model_container">
                             <label>STATUS</label><br>
-                            <input type="text" class="model_input" name="phone" value="<?php  echo($bookingRow['BOOKING_STATUS'] == 1) ? "Booked":  "Cancelled"?>" readonly>
+                            <select name="status" class="model_input">
+                                <option value="0">Cancelled</option>
+                                <option value="1">Booked</option>
+                            </select>
                         </div>
                         <div class="model_container_button">
                             <button type="submit" class="model_btn">Save</button>

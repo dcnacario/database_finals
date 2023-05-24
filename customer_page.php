@@ -1,5 +1,17 @@
-<?php 
-    require('./backend/fetchCustomer.php')
+<?php
+    require('./local_setting.php');
+    // Check if the search form is submitted
+    if(isset($_POST['searchDestination'])) {
+        $destination = $_POST['searchDestination'];
+
+        $sql = "SELECT * FROM customer WHERE CUS_LNAME LIKE '%$destination%'
+        OR CUS_FNAME LIKE '%$destination%'";
+        $resultCustomer = mysqli_query($conn, $sql);
+    } else {
+        // If the search form is not submitted, retrieve all charters
+        $sql = "SELECT * FROM customer";
+        $resultCustomer = mysqli_query($conn, $sql);
+    }
 ?>
 <html>
     <head>
@@ -51,6 +63,12 @@
                 </form>
                 </div>
         </div>
+            <div class="search_container">
+                <form action="customer_page.php" method="post">
+                    <input type="text" name="searchDestination" class="search_bar" placeholder="Search Name">
+                    <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+                </form>
+            </div>
             <table class="tb-container_admin">
                 <tr>
                     <th>Customer No.</th>
@@ -63,8 +81,6 @@
                 </tr>
                 
                 <?php 
-                    require('./backend/fetchCustomer.php');
-
                     while($customerRow = mysqli_fetch_array($resultCustomer)) {
                         $modalId = "editCustomer_" . $customerRow['CUS_CODE'];
                 ?>

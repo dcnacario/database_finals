@@ -3,6 +3,7 @@
     $charTrip = $_POST['charTrip'];
     $bookingId = $_POST['bookingId'];
     $payment = $_POST['payment'];
+    $status = $_POST['status'];
 
     $resultArray = array();
 
@@ -23,7 +24,7 @@
     }
 
 
-    $sql = "UPDATE booking SET CHAR_TRIP = {$charTrip}, PAYMENT = ({$resultArray['CHAR_DISTANCE']}*{$resultArray['MOD_CHG_MILE']}) WHERE BOOKING_ID = {$bookingId}";
+    $sql = "UPDATE booking SET CHAR_TRIP = {$charTrip}, PAYMENT = ({$resultArray['CHAR_DISTANCE']}*{$resultArray['MOD_CHG_MILE']}), BOOKING_STATUS = {$status} WHERE BOOKING_ID = {$bookingId}";
     $result = mysqli_query($conn, $sql);
     header("Location: ../booking_page.php");
 ?>

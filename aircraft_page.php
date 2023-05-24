@@ -1,5 +1,17 @@
-<?php 
-    require('./backend/fetchModel.php')
+<?php
+    require('./local_setting.php');
+    require('./backend/fetchModel.php');
+    // Check if the search form is submitted
+    if(isset($_POST['searchDestination'])) {
+        $destination = $_POST['searchDestination'];
+
+        $sql = "SELECT * FROM aircraft WHERE AC_NUMBER LIKE '%$destination%'";
+        $resultAC = mysqli_query($conn, $sql);
+    } else {
+        // If the search form is not submitted, retrieve all charters
+        $sql = "SELECT * FROM aircraft";
+        $resultAC = mysqli_query($conn, $sql);
+    }
 ?>
 <html>
     <head>
@@ -89,6 +101,12 @@
                     </form>
                 </div>
             </div>
+            <div class="search_container">
+                <form action="aircraft_page.php" method="post">
+                    <input type="text" name="searchDestination" class="search_bar" placeholder="Search Aircraft No.">
+                    <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+                </form>
+            </div>
             <table class="tb-container_admin">
                 <tr>
                     <th>Aircraft No.</th>
@@ -100,9 +118,7 @@
                 </tr>
                 
                 <?php 
-                    require('./backend/fetchAircraft.php');
-
-                    while($aircraftRow = mysqli_fetch_array($resultAircraft)) {
+                    while($aircraftRow = mysqli_fetch_array($resultAC)) {
                         $modalId = "editAircraft_" . $aircraftRow['AC_NUMBER'];
                 ?>
                 <tr>

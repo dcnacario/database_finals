@@ -1,3 +1,17 @@
+<?php
+    require('./local_setting.php');
+    // Check if the search form is submitted
+    if(isset($_POST['searchDestination'])) {
+        $destination = $_POST['searchDestination'];
+
+        $sql = "SELECT * FROM model WHERE MOD_CODE LIKE '%$destination%'";
+        $result = mysqli_query($conn, $sql);
+    } else {
+        // If the search form is not submitted, retrieve all charters
+        $sql = "SELECT * FROM model";
+        $result = mysqli_query($conn, $sql);
+    }
+?>
 <html>
     <head>
         <title>Aerilon | Admin - Model</title>
@@ -86,8 +100,13 @@
                     <th>Charge Per Mile</th>
                     <th>Action</th>
                 </tr>
+            <div class="search_container">
+                <form action="model_page.php" method="post">
+                    <input type="text" name="searchDestination" class="search_bar" placeholder="Search Model No.">
+                    <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+                </form>
+            </div>
                 <?php 
-                    require('./backend/fetchModel.php');
                     while($modelRow = mysqli_fetch_array($result)){
                         $modalId = "editModel_" . $modelRow['MOD_CODE'];
                 ?>
