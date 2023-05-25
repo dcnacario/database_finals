@@ -66,6 +66,13 @@
                 </form>
             </div>
         </div>
+        <div class="search_container">
+                <form action="showFlights_user.php" method="post">
+                <input type="hidden" name="cosCode" value="<?php echo $cosCode; ?>">
+                <input type="text" name="searchDestination" class="search_bar" placeholder="Search Destination">
+                <button type="submit" class="search_button"><i class='bx bx-search bx-xs'></i></button>
+                </form>
+            </div>
         <table class="tb-container">
             <tr>
                 <th>Trip</th>

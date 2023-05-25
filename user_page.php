@@ -181,6 +181,7 @@
                ?>
             </table>
         </div>
+        <script src="./js/editCharter.js"></script>
         <script src="./js/charterModal.js"></script>
     </body>
 </html>
