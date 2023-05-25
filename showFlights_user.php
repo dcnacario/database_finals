@@ -44,27 +44,27 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     </head>
     <body>
-            <ul class="topnav_admin">
-                    <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
-                </ul>
-                <div class="button_nav">
-                        <h3>Welcome! <?php echo $arrayUser['username']?></h3>
-                        <div class="indiv_button">
-                            <form action="user_page.php">
-                            <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
-                            <button class="btn_add_admin">Booking</button>
-                            </form>
-                </div>
-                <h4>|</h4>
-                <form action="showFlights_user.php">
+        <ul class="topnav_admin">
+            <li class="logo"><img src="./resources/logo.svg" width="10%"></li>
+        </ul>
+        <div class="button_nav">
+            <h3>Welcome! <?php echo $arrayUser['username']?></h3>
+            <div class="indiv_button">
+                <form action="user_page.php">
+                    <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
+                    <button class="btn_add_admin">Booking</button>
+                </form>
+            </div>
+            <h4>|</h4>
+            <form action="showFlights_user.php">
                 <input type="hidden" name="cosCode" value="<?php echo $cosCode?>">
                 <button type="submit" class="btn_add_admin" id="charterBtn">Book a Flight<i class='bx bx-plus add'></i></button>
-                </form>
-                <div style="padding-left: 0.5%;">
+            </form>
+            <div style="padding-left: 0.5%;">
                 <form action="./backend/logout.php">
-                <button type="submit" class="btn_logout_admin">Logout</button>
+                    <button type="submit" class="btn_logout_admin">Logout</button>
                 </form>
-                </div>
+            </div>
         </div>
         <table class="tb-container">
             <tr>
@@ -79,8 +79,7 @@
             </tr>
             <?php 
                 if(mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_array($result)){
-
+                    while($row = mysqli_fetch_array($result)){
             ?>
             <tr>
                 <td><?php echo $row['CHAR_TRIP']?></td>
@@ -92,21 +91,20 @@
                 <td><?php echo $row['CHAR_HOURS_WAIT']?></td>
                 <td>
                     <form action="./backend/booking_user.php" method="post">
-                        <input type="hidden" name="charTrip" value="<?php echo $arrayUser['CHAR_TRIP']?>">
-                        <input type="hidden" name="cusCode" value="<?php echo $arrayUser['CUS_CODE']?>">
+                        <input type="hidden" name="charTrip" value="<?php echo $row['CHAR_TRIP']?>">
+                        <input type="hidden" name="cusCode" value="<?php echo $cosCode?>">
                         <button type="submit" class="model_btn_edit"><i class='bx bxs-calendar-check'></i></button>
                     </form>
                 </td>
             </tr>
             <?php 
+                    }
                 }
-            }
-            else {
-                echo "<tr><td colspan='8' style='text-align: center; font-weight: 600; color: #5F5F5F;, font-size: 24px;'>No Flights Found</td></tr>";
-            }
+                else {
+                    echo "<tr><td colspan='8' style='text-align: center; font-weight: 600; color: #5F5F5F;, font-size: 24px;'>No Flights Found</td></tr>";
+                }
             ?>
         </table>
         <img src="./resources/clouds.svg" class="img-bg">
-        </div>
     </body>
 </html>

@@ -24,7 +24,7 @@
             echo '<p style="color: red; text-align: center;">Invalid credentials. Please try again.</p>';
         }
         ?>
-            <h2 style="text-align: center;">Admin</h2>
+            <h2 style="text-align: center;">Login</h2>
             <form method="post" action="./authentication.php">
                 <div class="inner_login_container">
                     <div class="username_container">

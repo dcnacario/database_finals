@@ -30,7 +30,6 @@
         <ul class="topnav">
             <li class="logo"><a href="./index.php"><img src="./resources/logo.svg" width="10%"></a></li>
             <div class="right_group">
-                <li class="right"><a href="login.php">Login</a></li>
             </div>
         </ul>
         <div class="container_ticket">
